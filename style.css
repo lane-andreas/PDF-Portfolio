@@ -286,6 +286,27 @@ section {
       margin: 3em 2em 0 2em;
     }
   }
+  #lightbulb {
+    left: 84vw !important;
+    z-index: 100;
+    color: var(--alternate) !important;
+
+    #string {
+      background-color: var(--alternate) !important;
+    }
+  }
+
+  #dark {
+    position: fixed;
+    z-index: 500;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: var(--alternate);
+    pointer-events: none;
+    transition: opacity 1s;
+  }
 }
 
 .underline {
@@ -323,4 +344,39 @@ section {
 }
 .load {
   translate: 0 0;
+}
+
+#lightbulb {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  rotate: 180deg;
+  color: var(--primary);
+  font-size: calc(1rem + 0.45vw);
+  width: 2em;
+  & iconify-icon {
+    translate: 0 0.1em;
+  }
+  #string {
+    background-color: var(--primary);
+    width: 1px;
+    height: 20px;
+  }
+}
+
+#dark {
+  position: fixed;
+  z-index: 500;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: var(--alternate);
+  pointer-events: none;
+  transition: opacity 1s;
 }
