@@ -80,7 +80,7 @@ header {
   .header-controls > div:nth-child(6) {
     margin-left: 1em;
   }
-  > iconify-icon {
+  > a {
     margin-left: auto;
     margin-right: 7vw;
   }
