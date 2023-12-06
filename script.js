@@ -41,3 +41,16 @@ mainElement.onmouseover = function () {
 sectionElement.onmouseover = function () {
   pageCount.textContent = "2 / 2";
 };
+
+const elements = document.querySelectorAll(".animate");
+
+let index = 0;
+
+const intervalId = setInterval(() => {
+  if (index < elements.length) {
+    elements[index].classList.add("load");
+    index++;
+  } else {
+    clearInterval(intervalId);
+  }
+}, 500);
