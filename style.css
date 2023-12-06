@@ -154,7 +154,8 @@ section {
 @media (width < 800px) {
   main,
   section {
-    width: 900px !important;
-    zoom: 0.4 !important;
+    width: 95vw !important;
+    zoom: 1 !important;
+    rotate: 0deg !important;
   }
 }
