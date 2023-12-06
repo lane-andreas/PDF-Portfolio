@@ -1,4 +1,8 @@
 :root {
+  --l: 4em;
+  --m: 2.4em;
+  --s: 1.6em;
+  --xs: 1.5em;
 }
 
 * {
@@ -21,7 +25,14 @@ body {
 }
 
 a,
-button {
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
   text-decoration: inherit;
   color: inherit;
   background-color: inherit;
@@ -135,16 +146,72 @@ header {
 
 main,
 section {
+  padding: 5vw 3vw;
+  font-size: calc(0.6vw);
+  font-family: Arial, Helvetica, sans-serif;
   aspect-ratio: 8.5 / 11;
   scale: 1;
-
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: white;
   margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
   transition: 0.5s;
+  > * {
+    flex-basis: 100%;
+  }
+  > :nth-child(1) {
+    align-self: flex-start;
+  }
+  > :nth-child(1),
+  > :nth-child(2) {
+    flex-basis: 50%;
+  }
+  & h2 {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--l);
+  }
+  & h2 > span {
+    margin-left: 5ch;
+    text-transform: uppercase;
+    font-size: 0.55em;
+    font-style: italic;
+    position: relative;
+    overflow: clip;
+    height: 1em;
+    width: 18ch;
+  }
+
+  & h2 > span p {
+    transition: top 0.3s;
+    position: absolute;
+  }
+  & h2 > span p:nth-of-type(1) {
+    top: 0;
+  }
+  & h2 > span p:nth-of-type(2) {
+    top: 100%;
+  }
+
+  & h2 > span:hover p:nth-of-type(1) {
+    top: -100%;
+  }
+  & h2 > span:hover p:nth-of-type(2) {
+    top: 0;
+  }
+
+  .info {
+    padding-top: 1em;
+    gap: 0.4em;
+    font-size: var(--s);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 60%;
+  }
 }
 
 section {
@@ -154,8 +221,29 @@ section {
 @media (width < 800px) {
   main,
   section {
+    aspect-ratio: unset;
+    font-size: 2vw !important;
     width: 95vw !important;
     zoom: 1 !important;
     rotate: 0deg !important;
   }
+}
+
+.underline {
+  position: relative;
+}
+
+.underline:hover::before {
+  width: 100%;
+}
+
+.underline:before {
+  transition: 0.3s;
+  content: "";
+  width: 0%;
+  height: 0.075em;
+  position: absolute;
+  background-color: black;
+  top: 105%;
+  opacity: inherit;
 }
