@@ -28,12 +28,12 @@ document.querySelector("#rotate").addEventListener("click", function () {
 
 document.querySelector("#expand").addEventListener("click", function () {
   var expandValue = mainElement.style.width;
-  if (expandValue == "max(50vw, 90vh)") mainElement.style.width = "95vw";
-  else mainElement.style.width = "max(50vw, 90vh)";
+  if (expandValue == "50vw") mainElement.style.width = "95vw";
+  else mainElement.style.width = "50vw";
 
   var expandValue2 = sectionElement.style.width;
-  if (expandValue2 == "max(50vw, 90vh)") sectionElement.style.width = "95vw";
-  else sectionElement.style.width = "max(50vw, 90vh)";
+  if (expandValue2 == "50vw") sectionElement.style.width = "95vw";
+  else sectionElement.style.width = "50vw";
 });
 mainElement.onmouseover = function () {
   pageCount.textContent = "1 / 2";

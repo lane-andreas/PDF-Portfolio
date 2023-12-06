@@ -150,3 +150,11 @@ section {
 section {
   margin-top: 12px;
 }
+
+@media (width < 800px) {
+  main,
+  section {
+    width: 900px !important;
+    zoom: 0.4 !important;
+  }
+}
